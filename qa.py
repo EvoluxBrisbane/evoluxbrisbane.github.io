@@ -24,6 +24,21 @@ SITE = 'https://evoluxbrisbane.github.io'
 BOOK = 'https://evolux.com.au/book-your-chauffeur'
 BLOG = 'https://evoluxbrisbane.blogspot.com'
 
+
+def _ssl_ctx():
+    """TLS context with a real CA bundle.
+
+    Some Python installs ship without a usable system trust store, which makes
+    every HTTPS check fail with CERTIFICATE_VERIFY_FAILED. Verification stays
+    ON; we only point it at certifi's CA bundle when one is available.
+    """
+    import ssl
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
 PAGES = ['index.html', 'chauffeur.html', 'airport.html', 'fleet.html',
          'corporate.html', 'weddings.html', 'about.html', 'journal.html',
          'contact.html', '404.html']
@@ -496,7 +511,7 @@ def check_live() -> None:
     for u in targets:
         try:
             rq = Request(u, headers={'User-Agent': 'evolux-qa/1.0'})
-            with urlopen(rq, timeout=25) as r:
+            with urlopen(rq, timeout=25, context=_ssl_ctx()) as r:
                 code = r.status
         except HTTPError as e:
             code = e.code
