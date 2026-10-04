@@ -1,0 +1,16 @@
+{
+  "name": "Evolux — Luxury Private Chauffeur, Brisbane",
+  "short_name": "Evolux",
+  "description": "Luxury private chauffeur and executive transport across Brisbane and South East Queensland.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0b0d",
+  "theme_color": "#0a0b0d",
+  "lang": "en-AU",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

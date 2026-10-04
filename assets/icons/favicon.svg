@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EVOLUX">
+  <rect width="64" height="64" fill="#0a0b0d"/>
+  <rect x="0" y="0" width="64" height="2.5" fill="#c6a76b"/>
+  <rect x="14" y="18" width="2" height="28" fill="#c6a76b"/>
+  <text x="22" y="39.5" fill="#f4f1ea"
+        font-family="Optima, 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="15.5" letter-spacing="0.9">EVOLUX</text>
+</svg>
